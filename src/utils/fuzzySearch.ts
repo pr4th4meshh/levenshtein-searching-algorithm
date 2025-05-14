@@ -25,7 +25,6 @@ export function fuzzySearch<T>(
 ): T[] {
   const normalizedQuery = normalize(query);
   if (normalizedQuery.length < 3) return []; 
-//   if (!normalizedQuery) return items.slice(0, limit);
 
   const effectiveThreshold = threshold ?? Math.max(3, Math.floor(normalizedQuery.length * 0.45));
   const cacheKey = `${normalizedQuery}-${effectiveThreshold}-${limit}`;
